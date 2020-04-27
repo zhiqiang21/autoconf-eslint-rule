@@ -1,0 +1,27 @@
+{
+  "name": "autoconf-eslint-rule",
+  "version": "1.0.0",
+  "description": "auto add eslint conf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhiqiang21/autoconf-eslint-rule.git"
+  },
+  "bin": {
+    "initLintPlug": "./initPlug.js",
+    "initLintRule": "./initRules.js"
+  },
+  "author": "zhiqiang21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhiqiang21/autoconf-eslint-rule/issues"
+  },
+  "homepage": "https://github.com/zhiqiang21/autoconf-eslint-rule#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "shelljs": "^0.8.4"
+  }
+}
