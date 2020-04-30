@@ -7,14 +7,12 @@
  * @author hpuhouzhiqiang@didiglobal.com
  */
 
+const CONST_PLUGIN = require('./const');
 const chalk = require('chalk');
 const shellJS = require('shelljs');
 
 const argvlist = process.argv;
 
-const normalPlugin = ['eslint', 'babel-eslint', 'eslint-plugin-babel'];
-const vuePlugin = ['eslint-plugin-vue'];
-const reactPlugin = ['eslint-plugin-react'];
 
 mainFn();
 
@@ -48,24 +46,24 @@ function mergePluginList(_pre = [], _next = []) {
     return _pre.concat(_next);
 }
 
-function installJSLintPlugin() {
-    shellJS.exec(`npm i ${normalPlugin.join('  ')} --save-dev`);
+export function installJSLintPlugin() {
+    shellJS.exec(`npm i ${CONST_PLUGIN.normalPlugin.join('  ')} --save-dev`);
 }
 
 
 // install normal javascript and vue plugin
-function installVueLintPlugin() {
+export function installVueLintPlugin() {
     shellJS.exec(
-        `npm i ${mergePluginList(normalPlugin, vuePlugin).join(
+        `npm i ${mergePluginList(CONST_PLUGIN.normalPlugin, CONST_PLUGIN.vuePlugin).join(
             '  '
         )} --save-dev`
     );
 }
 
 // install normal js plugin and react
-function installReactLintPlugin(param) {
+export function installReactLintPlugin(param) {
     shellJS.exec(
-        `npm i ${mergePluginList(normalPlugin, reactPlugin).join(
+        `npm i ${mergePluginList(CONST_PLUGIN.normalPlugin, CONST_PLUGIN.reactPlugin).join(
             '  '
         )} --save-dev`
     );
@@ -74,7 +72,7 @@ function installReactLintPlugin(param) {
 // install normal js plugin and vue react
 function installVueReactPlugin(param) {
     shellJS.exec(
-        `npm i ${mergePluginList(normalPlugin, reactPlugin, vuePlugin).join(
+        `npm i ${mergePluginList(CONST_PLUGIN.normalPlugin, CONST_PLUGIN.reactPlugin, CONST_PLUGIN.vuePlugin).join(
             '  '
         )} --save-dev`
     );
