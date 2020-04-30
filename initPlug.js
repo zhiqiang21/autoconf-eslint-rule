@@ -11,7 +11,6 @@ const chalk = require('chalk');
 const shellJS = require('shelljs');
 
 const argvlist = process.argv;
-const cwd = process.cwd();
 
 const normalPlugin = ['eslint', 'babel-eslint', 'eslint-plugin-babel'];
 const vuePlugin = ['eslint-plugin-vue'];
@@ -36,7 +35,7 @@ function mainFn() {
 
     // install vue and react plugin
     if (argvlist.length === 4) {
-        return installReactLintPlugin();
+        return installVueReactPlugin();
     }
 }
 
@@ -53,6 +52,8 @@ function installJSLintPlugin() {
     shellJS.exec(`npm i ${normalPlugin.join('  ')} --save-dev`);
 }
 
+
+// install normal javascript and vue plugin
 function installVueLintPlugin() {
     shellJS.exec(
         `npm i ${mergePluginList(normalPlugin, vuePlugin).join(
@@ -61,9 +62,19 @@ function installVueLintPlugin() {
     );
 }
 
+// install normal js plugin and react
 function installReactLintPlugin(param) {
     shellJS.exec(
         `npm i ${mergePluginList(normalPlugin, reactPlugin).join(
+            '  '
+        )} --save-dev`
+    );
+}
+
+// install normal js plugin and vue react
+function installVueReactPlugin(param) {
+    shellJS.exec(
+        `npm i ${mergePluginList(normalPlugin, reactPlugin, vuePlugin).join(
             '  '
         )} --save-dev`
     );
