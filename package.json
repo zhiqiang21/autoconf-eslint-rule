@@ -4,7 +4,7 @@
   "description": "auto add eslint conf",
   "main": "index.js",
   "scripts": {
-    "build:babel": "./node_modules/.bin/babel ./src/* --out-dir dist"
+    "build:babel": "npx babel ./src/* --out-dir dist"
   },
   "repository": {
     "type": "git",

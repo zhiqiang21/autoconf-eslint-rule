@@ -29,6 +29,9 @@ module.exports = {
         // 控制几个空格一个缩进
         'indent': ['error', 4],
 
+        // 模板字符串中的表达式不允许出现空格
+        "template-curly-spacing": ["error", "never"],
+
         // 双引号错误提示
         'quotes': [
             'warn',
