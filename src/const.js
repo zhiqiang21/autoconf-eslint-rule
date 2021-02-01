@@ -1,9 +1,8 @@
 /**
  * @file 定义脚本需要的常量
  * @date 2020/04/30
- * @author hpuhouzhiqiang@didiglobal.com
+ * @author hpuhouzhiqiang@gmail.com
  */
-
 
 // lint normal js lint plugin
 export const normalPlugin = ['eslint', 'babel-eslint', 'eslint-plugin-babel'];
